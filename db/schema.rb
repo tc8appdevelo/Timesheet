@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_27_181917) do
+ActiveRecord::Schema.define(version: 2022_04_27_183218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,10 @@ ActiveRecord::Schema.define(version: 2022_04_27_181917) do
     t.string "title"
     t.text "description"
     t.float "completion"
-    t.float "hours"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.float "total_hours"
+    t.float "worked_hours"
   end
 
 end
