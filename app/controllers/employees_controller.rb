@@ -1,11 +1,11 @@
 class EmployeesController < ApplicationController
+  skip_before_action :verify_authenticity_token
   def index
-    render json: params
+    @employees = Employee.all
   end
 
   def show
     @employee = Employee.find_by(id: params[:id])
-    render json: @employee
   end
 
   def create
@@ -15,6 +15,21 @@ class EmployeesController < ApplicationController
     else
       render json: "not valid employee"
     end
+  end
+  
+  def update
+    @employee = Employee.find_by(id: params[:id])
+    if @employee.update(employee_params)
+      render json: @employee
+    else
+      render json: "faild to update employee"
+    end
+  end
+
+  def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+    render json: "Employee Destroyed"
   end
 
   private

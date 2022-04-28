@@ -20,9 +20,9 @@ Rails.application.routes.draw do
 
   get "/employees", to: "employees#index"
   get "employees/:id", to: "employees#show"
-  post "projects", to: "projects#create"
-  patch "projects/:id", to: "projects#update"
-  put "projects/:id", to: "projects#update"
-  delete "projects/:id", to: "projects#destroy"
+  post "employees", to: "employees#create"
+  patch "employees/:id", to: "employees#update"
+  put "employees/:id", to: "employees#update"
+  delete "employees/:id", to: "employees#destroy"
 
 end
