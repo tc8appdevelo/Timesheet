@@ -18,4 +18,11 @@ Rails.application.routes.draw do
   put 'motorcycles/:id', to: 'motorcycles#update'
   delete 'motorcycles/:id', to: 'motorcycles#destroy'
 
+  get "/employees", to: "employees#index"
+  get "employees/:id", to: "employees#show"
+  post "projects", to: "projects#create"
+  patch "projects/:id", to: "projects#update"
+  put "projects/:id", to: "projects#update"
+  delete "projects/:id", to: "projects#destroy"
+
 end

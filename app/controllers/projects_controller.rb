@@ -8,6 +8,17 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
   end
 
+  def new
+    # look into why you need new method, all it does is 
+    # pass empty thing to the view, it was in the official
+    # rails tutorial, read it again later.
+    @project = Project.new
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
   def create
     @project = Project.new(project_params)
     if @project.save
@@ -18,9 +29,22 @@ class ProjectsController < ApplicationController
   end
 
   def update
+    @project = Project.find_by(id: params[:id])
+    
+    if @project.update(project_params)
+      render json: @project
+    else
+      render json: "update project failed"
+    end
   end
 
   def destroy
+    @project = Project.find(params[:id])
+    if @project.destroy
+      render json: "destroyed"
+    else
+      render json: "something went wrong deleting project"
+    end
   end
 
   private
