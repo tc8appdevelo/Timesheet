@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
     def project_params
       params.permit(:title, :description,
                     :total_hours, :worked_hours,
-                    :completion)
+                    :completion, :employee_id)
     end
 
 end

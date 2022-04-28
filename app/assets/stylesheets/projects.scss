@@ -1,3 +1,28 @@
 // Place all the styles related to the Projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.employees-flex-row {
+  display: flex;
+  padding: 10px;
+  border: 2px solid black;
+}
+.employee-name {
+  display: flex;
+  padding: 5px;
+  border: 1px solid gray;
+}
+.employee-projects-row {
+  display: flex;
+  border: 1px solid purple;
+}
+.employee-project-col {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  border: 1px solid green;
+}
+.test-working {
+  color: salmon;
+}

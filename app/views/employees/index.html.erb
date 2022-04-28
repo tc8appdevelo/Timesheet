@@ -1,6 +1,14 @@
 <h1>Employees Index</h1>
 <% @employees.each do |employee| %>
-  <h3>
-    <%= employee.name %>
-  </h3>
+  <div class="employees-flex-row">
+    <div class="employee-name"><%= employee.name %></div>
+    <div class="employee-projects-row">
+      <% employee.projects.each do |project| %>
+        <div class="employee-project-col">
+          <%= project.title %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
 <% end %>
