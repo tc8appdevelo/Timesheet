@@ -27,6 +27,11 @@
   color: salmon;
 }
 
+#project-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
 #canvas1 {
   background: aquamarine;
   width: 200px;
