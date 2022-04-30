@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      render json: @project
+      redirect_to @project
     else
       render json: @project.errors.full_messages
     end
@@ -32,7 +32,11 @@ class ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     
     if @project.update(project_params)
-      render json: @project
+      # When mutating database or application state,
+      # it is important to use redirect_to, otherwise
+      # if the user refreshes the page, you will make the same
+      # request. Eg: save the same thing twice to the database I think.
+      redirect_to @project
     else
       render json: "update project failed"
     end
@@ -49,9 +53,10 @@ class ProjectsController < ApplicationController
 
   private
     def project_params
-      params.permit(:title, :description,
+      params.require(:project).permit(:title, :description,
                     :total_hours, :worked_hours,
-                    :completion, :employee_id)
+                    :completion, :employee_id,
+                    :project_color)
     end
 
 end
