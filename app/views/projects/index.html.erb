@@ -1,10 +1,11 @@
 <h1>Projects#index</h1>
 
 
+
 <ul>
   <% @projects.each do |project| %>
     <div class="employees-flex-row">
-      <%= project.title %>
+      <%= link_to project.title, project %>
     </div>
   <% end %>
 </ul>

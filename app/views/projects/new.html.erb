@@ -1,0 +1,9 @@
+<%= form_with model: @project do |form| %>
+  <%= form.label :project %>
+  <%= form.text_field :title %>
+  <%= form.text_area :description %>
+  <%= form.text_field :completion %>
+  <%= form.text_field :total_hours %>
+  <%= form.text_field :worked_hours %>
+  <%= form.submit %>
+<% end %>

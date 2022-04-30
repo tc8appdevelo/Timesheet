@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
 
-  get "/projects", to: "projects#index"
-  get "projects/:id", to: "projects#show"
-  post "projects", to: "projects#create"
-  patch "projects/:id", to: "projects#update"
-  put "projects/:id", to: "projects#update"
-  delete "projects/:id", to: "projects#destroy"
-
   get 'silly', to: 'silly#fun'
   post 'silly', to: 'silly#time'
   post 'silly/:thing', to: 'silly#super'
@@ -24,5 +17,7 @@ Rails.application.routes.draw do
   patch "employees/:id", to: "employees#update"
   put "employees/:id", to: "employees#update"
   delete "employees/:id", to: "employees#destroy"
+
+  resources :projects
 
 end
