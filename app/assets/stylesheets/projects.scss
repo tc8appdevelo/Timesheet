@@ -32,6 +32,15 @@
   flex-direction: column;
 }
 
+#error-msg-wrap {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#error-msg {
+  color: red;
+}
+
 #canvas1 {
   background: aquamarine;
   width: 200px;

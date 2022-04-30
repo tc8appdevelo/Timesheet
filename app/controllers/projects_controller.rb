@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
     if @project.save
       redirect_to @project
     else
-      render json: @project.errors.full_messages
+      render :new, status: :unprocessable_entity
     end
   end
 
