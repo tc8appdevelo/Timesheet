@@ -1,9 +1,16 @@
 <h1>Projects#show</h1>
-<div style="background:<%= @project.project_color %>">
-  <div id="project-wrap">
-    <h3><%= @project.title %></h3>
-    <p><%= @project.description %></p>
-    <p>Hours: <%= @project.total_hours %></p>
+
+
+<div class="page-wrap">
+  <%= render 'navbar/navbar' %>
+  <div style="background:<%= @project.project_color %>">
+    <div id="project-wrap">
+      <h3><%= @project.title %></h3>
+      <p><%= @project.description %></p>
+      <p>Hours: <%= @project.total_hours %></p>
     
+    </div>
   </div>
 </div>
+
+

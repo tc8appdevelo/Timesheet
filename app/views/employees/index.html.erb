@@ -1,14 +1,25 @@
 <h1>Employees Index</h1>
-<% @employees.each do |employee| %>
-  <div class="employees-flex-row">
-    <div class="employee-name"><%= employee.name %></div>
-    <div class="employee-projects-row">
-      <% employee.projects.each do |project| %>
-        <div class="employee-project-col">
-          <%= project.title %>
-        </div>
-      <% end %>
-    </div>
 
-  </div>
-<% end %>
+<div class="page-wrap">
+
+  <%= render 'navbar/navbar' %>
+  <div class="employees-flex-col">
+  
+  
+  <% @employees.each do |employee| %>
+    <div class="employee-flex-row">
+      <div class="employee-name">
+        <%= link_to employee.name, employee_path(employee) %>
+      </div>
+      <div class="employee-projects-row">
+        <% employee.projects.each do |project| %>
+          <div class="employee-project-col">
+            <%= project.title %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+</div>

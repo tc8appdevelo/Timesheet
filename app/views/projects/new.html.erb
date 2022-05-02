@@ -1,36 +1,40 @@
 <h1>New Project</h1>
 
-<%= form_with model: @project do |form| %>
+<div class="page-wrap">
+  <%= render 'navbar/navbar' %>
+  <%= form_with model: @project do |form| %>
 
-  <div id="error-msg-wrap">
-    <% @project.errors.full_messages.each do |message| %>
-      <div id="error-msg"><%= message %></div>
-    <% end %>
-  </div>
+    <div id="error-msg-wrap">
+      <% @project.errors.full_messages.each do |message| %>
+        <div id="error-msg"><%= message %></div>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
 
-  <div>
-    <%= form.label :total_hours %>
-    <%= form.number_field :total_hours %>
-  </div>
+    <div>
+      <%= form.label :total_hours %>
+      <%= form.number_field :total_hours %>
+    </div>
 
-  <div>
-    <%= form.label :color %>
-    <%= form.color_field :project_color %>
-  </div>
+    <div>
+      <%= form.label :color %>
+      <%= form.color_field :project_color %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <div>
+      <%= form.submit %>
+    </div>
 
-<% end %>
+  <% end %>
+
+</div>
 

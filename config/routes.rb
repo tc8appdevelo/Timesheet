@@ -11,12 +11,7 @@ Rails.application.routes.draw do
   put 'motorcycles/:id', to: 'motorcycles#update'
   delete 'motorcycles/:id', to: 'motorcycles#destroy'
 
-  get "/employees", to: "employees#index"
-  get "employees/:id", to: "employees#show"
-  post "employees", to: "employees#create"
-  patch "employees/:id", to: "employees#update"
-  put "employees/:id", to: "employees#update"
-  delete "employees/:id", to: "employees#destroy"
+  resources :employees
 
   resources :projects
 

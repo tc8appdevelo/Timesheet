@@ -1,11 +1,15 @@
 <h1>Projects#index</h1>
 
+<div class="page-wrap">
+  <%= render 'navbar/navbar' %>
+
+  <ul>
+    <% @projects.each do |project| %>
+      <div class="project-flex-row">
+        <%= link_to project.title, project %>
+      </div>
+    <% end %>
+  </ul>
+</div>
 
 
-<ul>
-  <% @projects.each do |project| %>
-    <div class="employees-flex-row">
-      <%= link_to project.title, project %>
-    </div>
-  <% end %>
-</ul>
